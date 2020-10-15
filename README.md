@@ -13,7 +13,7 @@ https://gavinpwd.github.io
 - Popper JS v1.16.1
 - Unsplash API
 - Google Fonts API
-- Font Awesome Icons v4.7.0 API
+- Font Awesome Icons v4.7.0 library
 - Jasmine v3.6.0
 
 
