@@ -1,10 +1,9 @@
 # task-planner
+#### A JWD group project by Jahnavi Sangisetti and Gavin Pili
+#### (Generation :: Academy Xi  |  Junior Web Developer Program)
 
-You can test the app on your browser through this link
+*You can test the app on your browser through this link:*
 https://gavinpwd.github.io
-
-## A JWD group project by Jahnavi Sangisetti and Gavin Pili
-### (Generation :: Academy Xi  |  Junior Web Developer Program)
 
 **Our Task Planner web app was created using the following:**
 
