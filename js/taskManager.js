@@ -7,7 +7,7 @@ const createTaskHtml = (id, name, description, assignedTo, dueDate, status) => `
 <div class="card col-sm-4 px-sm-1 bg-light border-warning mb-3" data-task-id="${id}">
     
     <div class="card-body">
-        <h5 class="badge ${status === 'To Do' ? 'bg-secondary text-danger' :  status === 'In Progress' ? 'bg-warning' : status === 'For Review' ? 'bg-info' : 'badge-success'}">${status}</h5>
+        <h5 class="badge ${status === 'To Do' ? 'bg-secondary text-danger' :  status === 'In Progress' ? 'bg-warning' : status === 'For Review' ? 'bg-info text-white' : 'badge-success'}">${status}</h5>
         
         <h4 class="text-dark">${name}</h4>
         
