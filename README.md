@@ -1,3 +1,7 @@
+You can test the app on your browser through this link
+https://gavinpwd.github.io
+
+
 #task-planner
 
 A JWD group project by Jahnavi Sangisetti and Gavin Pili
