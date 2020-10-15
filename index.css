@@ -1,0 +1,37 @@
+body {
+        background: url('https://source.unsplash.com/GQD3Av_9A88') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        -o-background-size: cover;
+         
+}
+
+
+nav {
+        background-color: lightsteelblue;
+        opacity: 0.7;
+        padding: 20px;
+
+}
+
+
+.navbar-brand {
+        font-family: 'Ubuntu', sans-serif;
+        font-size: 35px;
+
+}
+
+
+#task-list-bg {
+        padding:20px; 
+        background-color: rgba(240,255,240, 0.3)
+
+}
+
+
+#task-list-header {
+        padding: 20px;
+        background-color:lavenderblush;
+
+}

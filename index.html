@@ -1,7 +1,162 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    
+    <!-- Google Font CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital@1&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icon CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Document CSS -->
+    <link rel="stylesheet" href="index.css">
+        
+    <title>Task Planner Web App :: Bootstrap</title>
+  
+</head>
+
+
+<!-- Main content is on top of background image-->
+
+<div class="container">
+    <nav class="navbar navbar-expand-lg sticky-top navbar-light">
+        <span class="navbar-brand mb-0 text-light">task:planner</span>
+    </nav>
+        
+    <div class="card-body">
+        <h5 class="card-title font-weight-light d-flex justify-content-center mt-4 text-secondary">Today is</h5>
+        <div id="clockbox" class="font-weight-light d-flex justify-content-center mt-1 text-secondary">  
+        </div>
+        <div class= "d-flex justify-content-center mt-5">
+        <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#modalCenter"><i class="fas fa-lg"></i>Create Task</button>
+        </div>
+    </div>
+
+
+<!-- modal form -->
+    <div class="modal fade" id="modalCenter" tabindex="-1" role="dialog" aria-labelledby="modalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Create new task</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                
+                <div class="modal-body">
+
+                    <form id="newTaskForm" action="/action_page.php" class="needs-validation" novalidate>
+                    
+                        <div class="form-group" >
+                            <label for="newTaskNameInput" class="col-sm-3 col-form-label">Name</label>
+                            <div class="col-sm-9">
+                                <textarea id="newTaskNameInput" type="text" placeholder="Add task name" class="form-control" minlength="8" required autofocus></textarea>
+                                <div class="valid-feedback">Looks good!</div>
+                                <div class="invalid-feedback">Task Name needs to be 8 characters long or more</div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group" >
+                            <label for="newTaskDescription" class="col-sm-3 col-form-label">Description</label>
+                            <div class="col-sm-9">
+                                <textarea id="newTaskDescription" placeholder="Add task description" class="form-control" rows="5" minlength="15" required></textarea>
+                                <div class="valid-feedback">Looks good!</div>
+                                <div class="invalid-feedback">Description needs to be 15 characters long or more</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="newTaskAssignedTo" class="col-sm-3 col-form-label">Assigned To</label>
+                            <div class="col-sm-9">
+                                <input id="newTaskAssignedTo" type="text" class="form-control" minlength="8" required>
+                                <div class="valid-feedback">Looks good!</div>
+                                <div class="invalid-feedback">Name of assignee needs to be 8 characters long or more</div>
+                            </div>
+                        </div>
+
+                        <div class="md-form md-outline input-with-post-icon">
+                            <label for="newTaskDueDate" class="col-sm-3 col-form-label">Due Date</label>
+                            <div class="col-sm-9">
+                                <input placeholder="Select date" id="newTaskDueDate" type="date" class="form-control" placeholder="dd/mm/yyyy">
+                            </div>
+                            <div class="valid-feedback">Looks good!</div>
+                            <div class="invalid-feedback">Please pick current date or future date</div>
+                        </div>
+                        
+                        <!--Task status-->
+                        <div class="form-inline m-2">
+                            <label for="addTaskStatus">Status: </label>
+                            <select id="addStatus" class="form-control" required>
+                                <option class="select">To Do</option>
+                                <option>In Progress</option>
+                                <option>For Review</option>
+                                <option>Done</option>
+                            </select>
+                            <div class="dropdown-menu" aria-labelledby="addTaskStatus">
+                                <a class="dropdown-item" href="#">To Do</a>
+                                <a class="dropdown-item" href="#">In Progress</a>
+                                <a class="dropdown-item" href="#">For Review</a>
+                                <a class="dropdown-item" href="#">Done</a>
+                            </div>
+                        </div>
+        
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button id="form-button" type="button" data-dismiss="modal" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Task List Section -->
+    <section class="mt-5">
+        <div id="task-list-bg" class="container card border-0 shadow my-5">
+        <h2 id="task-list-header" class="text-center text-secondary">Task List</h2>
+            <div class="container">
+                <div class="row" id="tasksList">
+                    <!-- New Task Cards goes here -->
+    
+                </div>
+            </div>
+        </div>
+        </section> 
+    </div>
+    </section>    
+</div>    
+
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+
+   <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    
+    <script src="js/clock.js"></script>
+    <script src="js/taskManager.js"></script>
+    <script src="js/index.js"></script>
+
 </body>
-</html
+<footer id="sticky-footer" class="py-4 text-info">
+    <div class="container text-center">
+      <small>Made at Generation :: Academy Xi || &#169; Copyright 2020 Jahnavi Sangisetti + Gavin Pili</small>
+    </div>
+  </footer>
+
+</html>
