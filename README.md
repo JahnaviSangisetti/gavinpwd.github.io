@@ -53,4 +53,7 @@ https://gavinpwd.github.io
 1. Create a Mobile app version
 
 
+**Here is a sample screenshot of the web app:**
+
+![Sample Screenshot](https://gavinpwd.github.io/sample-screenshot.png)
 
